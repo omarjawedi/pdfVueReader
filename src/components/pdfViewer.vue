@@ -61,10 +61,8 @@
 	  methods: {
 		async openHandler(pdfApp) {
 		  this.info = [];
-		  console.log(pdfApp.pagesCount)
 		  this.page= pdfApp.page
 		  this.pageCount = pdfApp.pagesCount
-		  console.log(pdfApp.page)
 		  const info = await pdfApp.pdfDocument
 			.getMetadata()
 			.catch(console.error.bind(console));
@@ -92,7 +90,7 @@
 		  }
 		},
 		makeFullscreen() {
-		  const fullscreenContainer = this.$refs.pdfApp;
+		  const fullscreenContainer = this.$refs.pdfViewer;
 			console.log('fullscreen', fullscreenContainer)
 		  // Check if the browser supports the Fullscreen API
 		  if (fullscreenContainer.requestFullscreen) {
